@@ -18,7 +18,8 @@ describe('transform-array-push', function() {
       presets: ["es2015-node-auto"],
       plugins: [
         Plugin
-      ]
+      ],
+      comments: false
     })
     var nodeVersion = process.version[1]
     if (nodeVersion !== '0') {
