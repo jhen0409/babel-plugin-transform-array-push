@@ -1,0 +1,31 @@
+{
+  "name": "babel-plugin-transform-array-push",
+  "version": "0.1.0",
+  "description": "Simple transform `arr.push(a)` to `arr[arr.length] = a`, just follow loverajoel/jstips#00",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhen0409/babel-plugin-transform-array-push.git"
+  },
+  "keywords": [
+    "babel",
+    "plugin",
+    "transform",
+    "array-push",
+    "jstips"
+  ],
+  "author": "Jhen <developer@jhen.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.8.0",
+    "babel-preset-es2015-node-auto": "0.0.5",
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
