@@ -14,9 +14,9 @@ module.exports = function(babel) {
     return constantViolations.length === 0 ||
       constantViolations.every(function(violation) {
         return violation.isAssignmentExpression() &&
-          violation.get('right').isArrayExpression();
-      });
-  };
+          violation.get('right').isArrayExpression()
+      })
+  }
 
   return {
     visitor: {
