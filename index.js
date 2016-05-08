@@ -37,7 +37,7 @@ module.exports = function(babel) {
         if (
           !binding.path.isVariableDeclarator() ||
           !isAllArrayExpression(binding.constantViolations) ||
-          binding.path.get('init').type !== 'ArrayExpression'
+          !binding.path.get('init').isArrayExpression()
         ) return
 
         var assignmentReplace = t.assignmentExpression(
