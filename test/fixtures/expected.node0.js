@@ -11,7 +11,7 @@ var func2 = function func2(arr) {
 };
 
 var arr2 = [1, 2, 3];
-var func4 = function func4() {
+var func3 = function func3() {
   return arr2[arr2.length] = 4, arr2.length;
 };
 
@@ -19,6 +19,6 @@ var arr3 = [1, 2, 3];
 arr3 = { push: function push() {
     return console.log(123);
   } };
-var func5 = function func5() {
+var func4 = function func4() {
   return arr3.push(4);
 };

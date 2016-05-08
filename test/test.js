@@ -11,6 +11,7 @@ function readFile(filePath) {
 var acutalCode = readFile('fixtures/actual.js')
 
 describe('transform-array-push', function() {
+  this.timeout(5000);
 
   it('should be pass with node@' + process.version[1], function() {
     var transformed = transform(acutalCode, {
