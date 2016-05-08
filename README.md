@@ -5,13 +5,17 @@ Simple transform `arr.push(a)` to `arr[arr.length] = a`, just follow [loverajoel
 ```js
 const arr = [1, 2, 3]
 arr.push(4)
+
+const arrLength = arr.push(5);
 ```
 
 into
 
 ```js
-const arr = [1, 2, 3]
-arr[arr.length] = 4
+const arr = [1, 2, 3];
+arr[arr.length] = 4;
+
+const arrLength = (arr[arr.length] = 5, arr.length);
 ```
 
 ## Limitation
