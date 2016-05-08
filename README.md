@@ -20,12 +20,17 @@ const arrLength = (arr[arr.length] = 5, arr.length);
 
 ## Limitation
 
-* Only for `ArrayExpression`, and it's known, no re-assign
+* Only for `ArrayExpression`, and it's known, no re-assign other type
 
 ```js
 // Will transform
 let arr = [1, 2, 3]
 arr.push(4)
+
+// Will transform
+let arr = [1, 2, 3]
+arr = [1, 2, 3, 4]
+arr4.push(5)
 
 // Will not transform
 let arr = [1, 2, 3]

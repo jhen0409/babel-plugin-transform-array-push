@@ -10,6 +10,14 @@ module.exports = function(babel) {
     'ConditionalExpression'
   ]
 
+  var isAllArrayExpression = function(constantViolations) {
+    return constantViolations.length === 0 ||
+      constantViolations.every(function(violation) {
+        return violation.isAssignmentExpression() &&
+          violation.get('right').isArrayExpression();
+      });
+  };
+
   return {
     visitor: {
       CallExpression: function(path) {
@@ -27,7 +35,7 @@ module.exports = function(babel) {
         var binding = scope.getBinding(callee.object.name)
         if (
           !binding.path.isVariableDeclarator() ||
-          binding.constantViolations.length > 0 ||
+          !isAllArrayExpression(binding.constantViolations) ||
           binding.path.get('init').type !== 'ArrayExpression'
         ) return
 
