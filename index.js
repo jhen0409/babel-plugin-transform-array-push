@@ -24,11 +24,12 @@ module.exports = function(babel) {
         var node = path.node
         var scope = path.scope
         var callee = node.callee
+        var arguments = node.arguments
 
         if (
           !callee.property ||
           callee.property.name !== 'push' || 
-          node.arguments > 1 ||
+          (arguments && arguments.length !== 1) ||
           callee.object.type !== 'Identifier'
         ) return
 
