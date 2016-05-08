@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-transform-array-push",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Simple transform `arr.push(a)` to `arr[arr.length] = a`, just follow loverajoel/jstips#00",
   "main": "index.js",
   "files": [
