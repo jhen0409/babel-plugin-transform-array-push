@@ -16,13 +16,13 @@ describe('transform-array-push', function() {
   it('should be pass with node@' + process.version[1], function() {
     var transformed = transform(acutalCode, {
       presets: ["es2015-node-auto"],
-      plugins: [
-        Plugin
-      ],
+      plugins: [Plugin],
       comments: false
     })
-    var nodeVersion = process.version[1]
-    if (nodeVersion !== '0') {
+    eval(transformed.code)
+
+    var nodeVersion = +process.version[1]
+    if (nodeVersion >= 4 && nodeVersion <= 6) {
       expect(transformed.code).to.equal(readFile('fixtures/expected.node4-6.js'))
     } else {
       expect(transformed.code).to.equal(readFile('fixtures/expected.node0.js'))
