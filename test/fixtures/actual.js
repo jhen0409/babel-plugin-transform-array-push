@@ -15,7 +15,7 @@ arr3 = { push: () => 1 }
 const func4 = () => arr3.push(4)
 func4()
 
-let arr4 = [1, 2, 3]
+let arr4 = arr3 = [1, 2, 3]
 arr4 = [1, 2, 3, 4]
 const func5 = () => arr4.push(4) // Will transform
 func5()

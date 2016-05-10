@@ -18,6 +18,12 @@ module.exports = function(babel) {
       })
   }
 
+  var checkBindingRight = function(path) {
+    if (path.isArrayExpression()) return true
+    if (path.isAssignmentExpression())
+      return checkBindingRight(path.get('right'))
+  }
+
   return {
     visitor: {
       CallExpression: function(path) {
@@ -37,7 +43,7 @@ module.exports = function(babel) {
         if (
           !binding.path.isVariableDeclarator() ||
           !isAllArrayExpression(binding.constantViolations) ||
-          !binding.path.get('init').isArrayExpression()
+          !checkBindingRight(binding.path.get('init'))
         ) return
 
         var assignmentReplace = t.assignmentExpression(
